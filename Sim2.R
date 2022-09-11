@@ -49,7 +49,7 @@ robust_tn <- function(i,m,x,S_jm){
   phi_im <- cumsum(temp)
   j <- seq(0,1,length.out =gN)
   tn <- phi_im - j*sum(temp)
-  tn1 <- tn[-m]
+  tn1 <- tn[-seq(1,m, by=1)]
   Mr <- max(abs(tn1))
   return(Mr)
 }    
